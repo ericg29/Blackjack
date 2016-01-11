@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Blackjack" default="jar" basedir=".">
+	<property name="build.dir" location="bin" />
+	<property name="src.dir" location="src" />
+	
+	<!-- Clean build directory -->
+	<target name="clean">
+	    <delete dir="${build.dir}" />
+		<delete file="Blackjack.jar" />
+	</target>
+	<target name="makedir">
+	    <mkdir dir="${build.dir}" />
+	</target>
+		
+	<!-- Compiles the code -->
+	<target name="compile" depends="clean, makedir">
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}">
+		</javac>
+	</target>
+	
+	<!--Creates the jar file  -->
+	<target name="jar" depends="compile">
+		<jar destfile="Blackjack.jar" basedir="${build.dir}">
+			<manifest>
+		        <attribute name="Main-Class" value="driver.driver" />
+			</manifest>
+		</jar>
+	</target>
+	
+</project>
