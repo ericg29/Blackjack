@@ -5,11 +5,11 @@
 	
 	<!-- Clean build directory -->
 	<target name="clean">
-	    <delete dir="${build.dir}" />
+		<delete dir="${build.dir}" />
 		<delete file="Blackjack.jar" />
 	</target>
 	<target name="makedir">
-	    <mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
 	</target>
 		
 	<!-- Compiles the code -->
@@ -22,7 +22,7 @@
 	<target name="jar" depends="compile">
 		<jar destfile="Blackjack.jar" basedir="${build.dir}">
 			<manifest>
-		        <attribute name="Main-Class" value="driver.driver" />
+				<attribute name="Main-Class" value="driver.driver" />
 			</manifest>
 		</jar>
 	</target>
